@@ -195,7 +195,7 @@ header #menu-bar {
 .about .image {
     flex: 1 1 40rem;
     height: 50rem;
-    background: url(images/about-frame-img.png), url(images/about-img.jpg) no-repeat;
+    background: url(./images/about-img.jpg), url(./images/about-img.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     background-blend-mode: screen;
@@ -394,7 +394,7 @@ header #menu-bar {
 }
 
 .order {
-    background: url(images/contact-bg.jpg) no-repeat;
+    background: url(./images/p4.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
@@ -501,6 +501,78 @@ header #menu-bar {
     color: var(--yellow);
 }
 
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+/* The actual popup */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1001;
+    top: 100%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: -300%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* Toggle this class - hide and show the popup */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 
 /* media queries  */
 
@@ -538,6 +610,13 @@ header #menu-bar {
         width: 100%;
     }
     header .navbar ul li a {
+        display: block;
+        color: #fff;
+        padding-left: 2rem;
+        border-left: .2rem solid #fff;
+        font-size: 2rem;
+    }
+    header .navbar ul li div {
         display: block;
         color: #fff;
         padding-left: 2rem;

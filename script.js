@@ -1,5 +1,12 @@
 $(document).ready(function() {
+    $('.clc').click(function() {
+        let item = $(this).parent().siblings('h3').html();
 
+        $("#myPopup").html(function(i, origText) {
+
+            return `${origText}<br>${item}`;
+        });
+    });
     $('#menu-bar').click(function() {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
